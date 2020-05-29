@@ -130,8 +130,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\EmailKind.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\HelpTopic.cs" />
+    <Compile Include="Models\InternalNote.cs" />
+    <Compile Include="Models\License.cs" />
+    <Compile Include="Models\Priority.cs" />
+    <Compile Include="Models\StaffGroup.cs" />
+    <Compile Include="Models\StaffLogs.cs" />
+    <Compile Include="Models\StaffMember.cs" />
+    <Compile Include="Models\StaffRole.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketEventsHistory.cs" />
+    <Compile Include="Models\TicketFile.cs" />
+    <Compile Include="Models\TicketSource.cs" />
+    <Compile Include="Models\TicketThreadMessage.cs" />
+    <Compile Include="Models\TicketWorkflow.cs" />
+    <Compile Include="Models\TMS_Settings.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\TicketViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -169,6 +190,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Tickets\CreateTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
