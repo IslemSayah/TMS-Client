@@ -6,82 +6,85 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm(new { id="CreateForm" }))
+@using (Html.BeginForm(new { id = "CreateForm" }))
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>TicketViewModel</h4>
-    <hr />
+    <div class="form-horizontal">
+        <h4>TicketViewModel</h4>
+        <hr />
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="Create"  value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
+}
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-        </div>
-    </div>
+<div>
+    @Html.ActionLink("Home", "Index")
+</div>
+
+@section Scripts {
 
     
-
-
-         <div class="form-group">
-              <div class="col-md-offset-2 col-md-10">
-                  <input id="Create" type="submit" value="Create" class="btn btn-default" />
-              </div>
-          </div>
-    </div>
-    }
-
-    <div>
-        @Html.ActionLink("Home", "Index")
-    </div>
-
-    @section Scripts {
-
-        <script src="/Scripts/jquery.validate.js"></script>
-        <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-        <!-- Include moment-->
+    <!-- Include moment-->
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <!-- qTip -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 
     <script type="text/javascript">
 
         $(document).ready(function () {
+
             $("#Create").click(function () {
                 // var dataajax = JSON.stringify($("#paiementform").serialize());
+                console.log('rak clickit');
                 var $form = $("#CreateForm");
                 var formdata = $form.serializeObject();
                 var array = $.map(formdata, function (value, index) {
                     return [value];
-                })
+                });
 
                 var dataajax = {
 
                     Subject: array[0],
                     Message: array[1]
-                 
+
 
                 };
-               /* var title = array[0];
-                var msg = array[3];*/
+                /* var title = array[0];
+                 var msg = array[3];*/
                 var finaldata = JSON.stringify(dataajax);
                 $.ajax({
                     url: 'https://localhost:44313/Tickets/CreateTicket',
@@ -117,6 +120,12 @@
             });
         });
 
+
+
+
+
+
+
         function getFormData($form) {
             var unindexed_array = $form.serializeArray();
             var indexed_array = {};
@@ -126,7 +135,7 @@
             });
 
             return indexed_array;
-        }
+        };
 
 
 
