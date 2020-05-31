@@ -83,3 +83,8 @@ C:\Users\Utilisateur\source\repos\TMS-Client\obj\Debug\TMS-Client.csprojAssembly
 C:\Users\Utilisateur\source\repos\TMS-Client\obj\Debug\TMS-Client.csproj.CopyComplete
 C:\Users\Utilisateur\source\repos\TMS-Client\obj\Debug\TMS-Client.dll
 C:\Users\Utilisateur\source\repos\TMS-Client\obj\Debug\TMS-Client.pdb
+C:\Users\Utilisateur\source\repos\TMS-Client\bin\EntityFramework.dll
+C:\Users\Utilisateur\source\repos\TMS-Client\bin\EntityFramework.SqlServer.dll
+C:\Users\Utilisateur\source\repos\TMS-Client\bin\EntityFramework.xml
+C:\Users\Utilisateur\source\repos\TMS-Client\bin\EntityFramework.SqlServer.xml
+C:\Users\Utilisateur\source\repos\TMS-Client\bin\fr\EntityFramework.resources.dll
